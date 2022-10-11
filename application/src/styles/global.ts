@@ -21,4 +21,10 @@ export const GlobalStyle = createGlobalStyle`
     outline: none;
     box-shadow: 0 0 0 2px ${props => props.theme.blue};
   }
+
+  .container {
+    width: calc(54rem + 2%);
+    padding: 0 2%;
+    margin: 0 auto;
+  }
 `
