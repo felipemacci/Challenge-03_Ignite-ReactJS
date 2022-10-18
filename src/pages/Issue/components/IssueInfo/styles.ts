@@ -33,6 +33,7 @@ export const IssueInfoContainer = styled.div`
 
 export const InfoList = styled.ul`
   display: flex;
+  align-items: center;
   gap: 2rem;
   margin-top: 0.5rem;
   list-style: none;
