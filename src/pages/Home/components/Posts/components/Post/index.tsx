@@ -1,14 +1,26 @@
 import { PostContainer } from "./styles";
+import { formatDistanceToNowStrict } from 'date-fns'
 
-export function Post() {
+interface PostProps {
+  title: string
+  date: Date
+  content: string
+}
+
+export function Post({ title, date, content }: PostProps) {
+  const summary = content.split(' ').slice(0, 23).join(' ') + '...'
+  const howMuchTime = formatDistanceToNowStrict(date, {
+    addSuffix: true,
+  })
+
   return (
     <PostContainer>
       <header>
-        <h3>JavaScript data types and data structures</h3>
-        <span>1 day ago</span>
+        <h3>{title}</h3>
+        <span>{howMuchTime}</span>
       </header>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tenetur cumque, aspernatur sint suscipit nostrum eius quod voluptatibus nemo nam. Eveniet dolorem, blanditiis...</p>
+      <p>{summary}</p>
     </PostContainer>
   )
 }
