@@ -1,10 +1,24 @@
-import { useContext } from "react";
-import { UserContext } from "../../../../contexts/UserContext";
 import { AboutItem, AboutList, ProfileContainer, ProfileInfo } from "./styles";
 import { followersFormatter } from '../../../../utils/formatter'
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export function Profile() {
-  const { userInfo } = useContext(UserContext)
+  const [userInfo, setUserInfo] = useState<any>({})
+
+  const setGithubUser = async() => {
+    try {
+      const response = await axios.get(`https://api.github.com/users/felipemacci`)
+
+      setUserInfo(await response.data)
+    } catch(error) {
+      console.error(error)
+    }
+  }
+
+  useEffect(() => {
+    setGithubUser()
+  }, [])
 
   return (
     <ProfileContainer>

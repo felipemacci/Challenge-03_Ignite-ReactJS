@@ -10,14 +10,14 @@ export function Posts() {
   const createPostList = async() => {
     const response = await axios.get('https://api.github.com/repos/felipemacci/Challenge-03_Ignite-ReactJS/issues')
 
-    setPostList(response.data)
+    setPostList(await response.data)
   }
-
-  const { register, watch } = useForm()
 
   useEffect(() => {
     createPostList()
   }, [])
+
+  const { register, watch } = useForm()
 
   const currentPostList = postList.filter(post => {
     const postTitle = JSON.stringify(post['title']).toLowerCase()
@@ -43,6 +43,7 @@ export function Posts() {
                 title={post['title']}
                 date={new Date(post['created_at'])}
                 content={post['body']}
+                number={post['number']}
                 key={post['created_at']}
               />
             )

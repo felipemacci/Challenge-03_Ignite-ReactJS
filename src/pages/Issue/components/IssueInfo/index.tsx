@@ -1,7 +1,20 @@
+import { formatDistanceToNowStrict } from "date-fns";
 import { NavLink } from "react-router-dom";
 import { InfoItem, InfoList, IssueInfoContainer } from "./styles";
 
-export function IssueInfo() {
+interface IssueInfoProps {
+  url: string
+  title: string
+  author: string
+  date: Date
+  comments: number
+}
+
+export function IssueInfo({ url, title, author, date, comments }: IssueInfoProps) {
+  const creationTime = formatDistanceToNowStrict(date, {
+    addSuffix: true,
+  })
+  
   return (
     <IssueInfoContainer>
       <header>
@@ -11,27 +24,27 @@ export function IssueInfo() {
             Back
           </NavLink>
 
-          <a href="">
+          <a href={url} target="_blank">
             View on Github
             <i className="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </nav>
       </header>
 
-      <h1>JavaScript data types and data structures</h1>
+      <h1>{title}</h1>
 
       <InfoList>
         <InfoItem>
           <i className="fa-brands fa-github"></i>
-          <span>Github</span>
+          <span>{author}</span>
         </InfoItem>
         <InfoItem>
           <i className="fa-solid fa-calendar-day"></i>
-          <span>1 day ago</span>
+          <span>{creationTime}</span>
         </InfoItem>
         <InfoItem>
           <i className="fa-solid fa-comment"></i>
-          <span>5 comments</span>
+          <span>{comments} comments</span>
         </InfoItem>
       </InfoList>
     </IssueInfoContainer>
