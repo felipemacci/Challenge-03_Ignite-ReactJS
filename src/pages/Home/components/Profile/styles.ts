@@ -6,6 +6,8 @@ export const ProfileContainer = styled.section`
   align-items: flex-start;
   gap: 2rem;
   padding: 2rem 2.438rem;
+  position: relative;
+  top: -5.5rem;
   background: ${props => props.theme["base-profile"]};
   border-radius: 10px;
   box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 20%);
@@ -32,10 +34,21 @@ export const ProfileInfo = styled.div`
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      position: relative;
       text-transform: uppercase;
       text-decoration: none;
       font-size: 0.75rem;
       color: ${props => props.theme.blue};
+
+      &:hover::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: -2px;
+        background-color: ${props => props.theme.blue};
+      }
     }
   }
 

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PostsContainer = styled.section`
-  margin-top: 4.5rem;
+  margin-bottom: 14.875rem;
 
   & > header {
     display: grid;

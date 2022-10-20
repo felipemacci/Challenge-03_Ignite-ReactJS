@@ -3,15 +3,15 @@ import { NavLink } from "react-router-dom";
 import { InfoItem, InfoList, IssueInfoContainer } from "./styles";
 
 interface IssueInfoProps {
-  url: string
-  title: string
-  author: string
-  date: Date
-  comments: number
+  url: string | null
+  title: string | null
+  author: string | null
+  date: Date | null
+  comments: number | null
 }
 
 export function IssueInfo({ url, title, author, date, comments }: IssueInfoProps) {
-  const creationTime = formatDistanceToNowStrict(date, {
+  const creationTime = typeof date !== "string" && formatDistanceToNowStrict(date!, {
     addSuffix: true,
   })
   
@@ -24,7 +24,7 @@ export function IssueInfo({ url, title, author, date, comments }: IssueInfoProps
             Back
           </NavLink>
 
-          <a href={url} target="_blank">
+          <a href={url!} target="_blank">
             View on Github
             <i className="fa-solid fa-arrow-up-right-from-square"></i>
           </a>

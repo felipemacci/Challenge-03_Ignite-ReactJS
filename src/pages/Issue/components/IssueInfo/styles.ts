@@ -16,10 +16,21 @@ export const IssueInfoContainer = styled.div`
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      position: relative;
       text-transform: uppercase;
       text-decoration: none;
       font-size: 0.75rem;
       color: ${props => props.theme.blue};
+
+      &:last-child:hover::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: -2px;
+        background-color: ${props => props.theme.blue};
+      }
     }
   }
 

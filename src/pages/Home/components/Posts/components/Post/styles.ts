@@ -1,9 +1,18 @@
 import styled from "styled-components";
 
 export const PostContainer = styled.article`
-  padding: 2rem;
   background: ${props => props.theme["base-post"]};
   border-radius: 10px;
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    text-decoration: none;
+    color: ${props => props.theme["base-text"]};
+    border-radius: inherit;
+  }
 
   header {
     display: flex;
@@ -14,6 +23,7 @@ export const PostContainer = styled.article`
       width: 15rem;
       line-height: 1.6;
       font-size: 1.25rem;
+      color: ${props => props.theme["base-title"]};
     }
 
     span {
@@ -26,5 +36,9 @@ export const PostContainer = styled.article`
   p {
     margin-top: 1rem;
     line-height: 1.6;
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 2px ${props => props.theme["base-label"]};
   }
 `
