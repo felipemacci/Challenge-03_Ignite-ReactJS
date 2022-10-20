@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ProfileContainer = styled.section`
   display: flex;
@@ -8,7 +8,7 @@ export const ProfileContainer = styled.section`
   padding: 2rem 2.438rem;
   position: relative;
   top: -5.5rem;
-  background: ${props => props.theme["base-profile"]};
+  background: ${(props) => props.theme['base-profile']};
   border-radius: 10px;
   box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 20%);
 
@@ -27,7 +27,7 @@ export const ProfileInfo = styled.div`
 
     h1 {
       font-size: 1.5rem;
-      color: ${props => props.theme["base-title"]};
+      color: ${(props) => props.theme['base-title']};
     }
 
     a {
@@ -38,7 +38,7 @@ export const ProfileInfo = styled.div`
       text-transform: uppercase;
       text-decoration: none;
       font-size: 0.75rem;
-      color: ${props => props.theme.blue};
+      color: ${(props) => props.theme.blue};
 
       &:hover::after {
         content: '';
@@ -47,7 +47,7 @@ export const ProfileInfo = styled.div`
         height: 1px;
         position: absolute;
         bottom: -2px;
-        background-color: ${props => props.theme.blue};
+        background-color: ${(props) => props.theme.blue};
       }
     }
   }
@@ -72,10 +72,10 @@ export const AboutItem = styled.li`
 
   i {
     font-size: 1.125rem;
-    color: ${props => props.theme["base-label"]};
+    color: ${(props) => props.theme['base-label']};
   }
 
   span {
-    color: ${props => props.theme["base-subtitle"]};
+    color: ${(props) => props.theme['base-subtitle']};
   }
 `

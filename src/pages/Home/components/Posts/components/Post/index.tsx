@@ -1,6 +1,6 @@
-import { PostContainer } from "./styles";
+import { PostContainer } from './styles'
 import { formatDistanceToNowStrict } from 'date-fns'
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 
 interface PostProps {
   title: string

@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const PostContainer = styled.article`
-  background: ${props => props.theme["base-post"]};
+  background: ${(props) => props.theme['base-post']};
   border-radius: 10px;
 
   a {
@@ -10,7 +10,7 @@ export const PostContainer = styled.article`
     height: 100%;
     padding: 2rem;
     text-decoration: none;
-    color: ${props => props.theme["base-text"]};
+    color: ${(props) => props.theme['base-text']};
     border-radius: inherit;
   }
 
@@ -23,13 +23,13 @@ export const PostContainer = styled.article`
       width: 15rem;
       line-height: 1.6;
       font-size: 1.25rem;
-      color: ${props => props.theme["base-title"]};
+      color: ${(props) => props.theme['base-title']};
     }
 
     span {
       line-height: 2;
       font-size: 0.875rem;
-      color: ${props => props.theme["base-span"]};
+      color: ${(props) => props.theme['base-span']};
     }
   }
 
@@ -39,6 +39,6 @@ export const PostContainer = styled.article`
   }
 
   &:hover {
-    box-shadow: 0 0 0 2px ${props => props.theme["base-label"]};
+    box-shadow: 0 0 0 2px ${(props) => props.theme['base-label']};
   }
 `

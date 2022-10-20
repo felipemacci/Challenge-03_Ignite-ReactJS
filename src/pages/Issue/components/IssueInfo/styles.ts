@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const IssueInfoContainer = styled.div`
   width: 100%;
   padding: 2rem 2.438rem;
-  background: ${props => props.theme["base-profile"]};
+  background: ${(props) => props.theme['base-profile']};
   border-radius: 10px;
   box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 20%);
 
@@ -20,7 +20,7 @@ export const IssueInfoContainer = styled.div`
       text-transform: uppercase;
       text-decoration: none;
       font-size: 0.75rem;
-      color: ${props => props.theme.blue};
+      color: ${(props) => props.theme.blue};
 
       &:last-child:hover::after {
         content: '';
@@ -29,7 +29,7 @@ export const IssueInfoContainer = styled.div`
         height: 1px;
         position: absolute;
         bottom: -2px;
-        background-color: ${props => props.theme.blue};
+        background-color: ${(props) => props.theme.blue};
       }
     }
   }
@@ -38,7 +38,7 @@ export const IssueInfoContainer = styled.div`
     margin-top: 1.25rem;
     line-height: 1.3;
     font-size: 1.5rem;
-    color: ${props => props.theme["base-title"]};
+    color: ${(props) => props.theme['base-title']};
   }
 `
 
@@ -57,11 +57,11 @@ export const InfoItem = styled.li`
 
   i {
     font-size: 1.125rem;
-    color: ${props => props.theme["base-label"]};
+    color: ${(props) => props.theme['base-label']};
   }
 
   span {
     font-size: 1rem;
-    color: ${props => props.theme["base-span"]};
+    color: ${(props) => props.theme['base-span']};
   }
 `

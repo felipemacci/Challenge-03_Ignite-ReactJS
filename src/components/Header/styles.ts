@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
   position: relative;
@@ -18,7 +18,11 @@ export const CoverContainer = styled.div`
   align-items: center;
   width: 100%;
   padding: 1.875rem 0;
-  background-image: linear-gradient(to bottom, ${props => props.theme["base-profile"]}, #14589C 190%);
+  background-image: linear-gradient(
+    to bottom,
+    ${(props) => props.theme['base-profile']},
+    #14589c 190%
+  );
 
   img:first-of-type,
   img:last-of-type {

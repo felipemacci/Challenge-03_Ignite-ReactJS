@@ -1,4 +1,4 @@
-import { IssueContentContainer } from "./styles";
+import { IssueContentContainer } from './styles'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 
@@ -9,10 +9,7 @@ interface IssueContentProps {
 export function IssueContent({ content }: IssueContentProps) {
   return (
     <IssueContentContainer>
-      <ReactMarkdown
-        className="line-break"
-        rehypePlugins={[rehypeRaw]}
-      >
+      <ReactMarkdown className="line-break" rehypePlugins={[rehypeRaw]}>
         {content!}
       </ReactMarkdown>
     </IssueContentContainer>
